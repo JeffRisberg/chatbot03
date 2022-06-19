@@ -3,25 +3,17 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './Frame.css';
 
+import UserInfo from './components/UserInfo/UserInfo';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import EditUserProfile from './components/EditUserProfile/EditUserProfile';
-import UserInfo from './components/UserInfo/UserInfo';
-// import Home from './pages/Home';
 import AdminDashboard from './pages/AdminDashboard';
 import UserDashboard from './pages/UserDashboard';
+import CalendarDashboard from './pages/CalendarDashboard';
 
 import {set_screen} from './actions/screen';
 
 function Frame(props) {
-  // var screen_tab = props.screen_tab || '|';
-  // const index = screen_tab.indexOf('|');
-  // screen_tab = screen_tab.substr(0, index);
-
-  //function showCalendar() {
-  //  console.log('calendar');
-  //  props.set_screen('calendar');
-  //}
 
   if (props.screen === 'register') {
     return (
@@ -50,6 +42,7 @@ function Frame(props) {
   } else if (props.screen === 'calendar') {
     return (
       <div className="frame-container">
+        <UserInfo/>
         <CalendarDashboard/>
       </div>
     )

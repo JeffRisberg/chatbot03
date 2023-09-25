@@ -7,7 +7,7 @@ import Table from './widgets/Table/Table';
 import ContentUpdater from './widgets/ContentUpdater/ContentUpdater';
 
 const config = {
-  botName: 'chatbot03',
+  botName: 'Chatbot02',
   initialMessages: [
     createChatBotMessage('How are you doing today?')
   ],

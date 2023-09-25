@@ -1,47 +1,47 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import axios from "axios";
+import axios from 'axios';
 import {Field, Form, withFormik} from 'formik';
 import * as Yup from 'yup';
+import './LoginForm.css';
 
 import {set_user} from '../../actions/user';
 import {set_screen} from '../../actions/screen';
 
-
-const LoginPage = (props) => {
-  const loginPageStyle = {
-    margin: '32px auto 37px',
-    maxWidth: '530px',
-    background: '#fff',
-    padding: '30px',
-    borderRadius: '10px',
-    boxShadow: '0px 0px 3px 3px rgba(0,0,0,0.15)'
-  };
+const LoginForm = (props) => {
 
   const {touched, errors} = props;
 
-  function doRegister() {
-    props.set_screen('register');
-  }
-
   return (
-    <div className="container">
-      <div className="login-wrapper" style={loginPageStyle}>
-        <h2>Login</h2>
+    <div className="loginForm-container">
+      <div className="login-wrapper">
         <Form className="form-container">
-          <div className="form-group">
-            <label htmlFor="email">Email</label>
-            <Field type="text" name="email" className={"form-control"} placeholder="Email"/>
+
+          <div className="form-group" style={{height: 60}}>
+            <Field type="email" name="email" className={"form-control"} placeholder="Email"/>
             {touched.email && errors.email && <span className="help-block text-danger">{errors.email}</span>}
           </div>
+
           <div className="form-group">
-            <label htmlFor="password">Password</label>
             <Field type="password" name="password" className={"form-control"} placeholder="Password"/>
             {touched.password && errors.password && <span className="help-block text-danger">{errors.password}</span>}
           </div>
-          <button type="submit" className="btn btn-primary">Login</button>
-          &nbsp;&nbsp;
-          <button type="button" onClick={doRegister} className="btn btn-primary">Register</button>
+
+          <div className="alignleft" style={{cursor: 'pointer'}} /*onClick={doRegister}*/>
+            <span className="text-style small">
+              Don't have an account?
+            </span>
+          </div>
+
+          <div className="alignright" style={{cursor: 'pointer'}} /*onClick={doReset}*/>
+            <span className="text-style small">
+              Forgot Password?
+            </span>
+          </div>
+
+          <button type="submit" className="btn btn-primary mt-4">
+            Login &#x2192;
+          </button>
         </Form>
       </div>
     </div>
@@ -61,12 +61,14 @@ const LoginFormik = withFormik({
   }),
   handleSubmit: (values, {props}) => {
     try {
-      axios.post("http://localhost:5000/login", values, {
+      axios.post("/login", values, {
         withCredentials: true,
       })
         .then(response => {
           if (response.status == 200 && response.data != null && response.data.length > 0) {
             props.set_user(response.data[0]);
+            props.set_screen('home', '');
+
           } else {
             // HANDLE ERROR
             alert('Invalid email or password')
@@ -76,7 +78,7 @@ const LoginFormik = withFormik({
       alert('Unable to login')
     }
   }
-})(LoginPage);
+})(LoginForm);
 
 const mapStateToProps = (state) => ({
   content: state.app.content

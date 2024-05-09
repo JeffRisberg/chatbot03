@@ -3,10 +3,10 @@ import {connect} from 'react-redux';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './Frame.css';
 
-import UserInfo from './components/UserInfo/UserInfo';
-import Login from './components/Login/Login';
-import Register from './components/Register/Register';
-import EditUserProfile from './components/EditUserProfile/EditUserProfile';
+//import UserInfo from './components/UserInfo/UserInfo';
+//import Login from './components/Login/Login';
+//import Register from './components/Register/Register';
+//import EditUserProfile from './components/EditUserProfile/EditUserProfile';
 import AdminDashboard from './pages/AdminDashboard';
 import UserDashboard from './pages/UserDashboard';
 import CalendarDashboard from './pages/CalendarDashboard';
@@ -31,9 +31,9 @@ function Frame(props) {
         <div className="row">
           <div className="col-md-3">
           </div>
-          <div className="col-md-6">
+          {/*<div className="col-md-6">
             <Register/>
-          </div>
+          </div>*/}
           <div className="col-md-3">
           </div>
         </div>
@@ -42,7 +42,7 @@ function Frame(props) {
   } else if (props.screen === 'calendar') {
     return (
       <div className="frame-container">
-        <UserInfo/>
+        {/*<UserInfo/>*/}
         <CalendarDashboard/>
       </div>
     )
@@ -62,9 +62,9 @@ function Frame(props) {
         <div className="row">
           <div className="d-sm-nonecol-lg-3">
           </div>
-          <div className="col-sm-12 col-lg-6">
+          {/*<div className="col-sm-12 col-lg-6">
             <EditUserProfile/>
-          </div>
+          </div>*/}
           <div className="d-sm-none col-lg-3">
           </div>
         </div>
@@ -86,9 +86,9 @@ function Frame(props) {
         <div className="row">
           <div className="d-sm-none col-lg-3">
           </div>
-          <div className="col-sm-12 col-lg-6">
+          {/*<div className="col-sm-12 col-lg-6">
             <Login/>
-          </div>
+          </div>*/}
           <div className="d-sm-none col-lg-3">
           </div>
         </div>

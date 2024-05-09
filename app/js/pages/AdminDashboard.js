@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import NavBar from '../components/NavBar';
 import './AdminDashboard.css';
 
-import TeamsChart from '../components/TeamsChart/TeamsChart';
-import PopularCourses from '../components/PopularCourses/PopularCourses';
+//import TeamsChart from '../components/TeamsChart/TeamsChart';
+//import PopularCourses from '../components/PopularCourses/PopularCourses';
 
 class AdminDashboard extends Component {
 
@@ -16,11 +16,11 @@ class AdminDashboard extends Component {
           <div className="row">
             <div className="col-md-8">
               <h3>Team Scores</h3>
-              <TeamsChart/>
+              /*<TeamsChart/>*/
             </div>
             <div className="col-md-4">
               <h3>Popular Courses</h3>
-              <PopularCourses/>
+              /*<PopularCourses/>*/
             </div>
           </div>
         </div>

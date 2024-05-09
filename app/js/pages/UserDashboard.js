@@ -4,9 +4,9 @@ import Chatbot from 'react-chatbot-kit';
 import 'react-chatbot-kit/build/main.css';
 import './UserDashboard.css';
 
-import ScheduleList from '../components/ScheduleList/ScheduleList';
-import ScheduleChart from '../components/ScheduleChart/ScheduleChart';
-import UserInfo from '../components/UserInfo/UserInfo';
+//import ScheduleList from '../components/ScheduleList/ScheduleList';
+//import ScheduleChart from '../components/ScheduleChart/ScheduleChart';
+//import UserInfo from '../components/UserInfo/UserInfo';
 
 import config from '../bot/config';
 import MessageParser from '../bot/MessageParser';
@@ -20,10 +20,10 @@ function UserDashboard() {
       <UserInfo/>
       <div className="row">
         <div className="col-md-7">
-          <ScheduleChart/>
+          /*<ScheduleChart/>*/
           <div className="row" style={{marginTop: 20}}>
             <div className="col-md-10">
-              <ScheduleList/>
+              /*<ScheduleList/>*/
             </div>
           </div>
         </div>

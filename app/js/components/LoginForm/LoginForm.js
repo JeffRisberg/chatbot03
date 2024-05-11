@@ -61,10 +61,11 @@ const LoginFormik = withFormik({
   }),
   handleSubmit: (values, {props}) => {
     try {
-      axios.post("/login", values, {
+      axios.post("/api/users/login", values, {
         withCredentials: true,
       })
         .then(response => {
+          console.log(response);
           if (response.status == 200 && response.data != null && response.data.length > 0) {
             props.set_user(response.data[0]);
             props.set_screen('home', '');

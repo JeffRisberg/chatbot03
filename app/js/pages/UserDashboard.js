@@ -17,13 +17,13 @@ function UserDashboard() {
   return (
     <div className="user-dashboard">
       <Link to="/adminDashboard">HR Access</Link>
-      <UserInfo/>
+      User Info
       <div className="row">
         <div className="col-md-7">
-          /*<ScheduleChart/>*/
+          {/*<ScheduleChart/>*/}
           <div className="row" style={{marginTop: 20}}>
             <div className="col-md-10">
-              /*<ScheduleList/>*/
+              {/*<ScheduleList/>*/}
             </div>
           </div>
         </div>

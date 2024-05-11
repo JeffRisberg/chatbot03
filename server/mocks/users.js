@@ -47,10 +47,23 @@ module.exports = (app) => {
   usersRouter.use(bodyParser.json());
 
   usersRouter.get('/', function (req, res) {
-    res.send(userList)
+    res.send(userList);
   });
 
   usersRouter.get('/:id', function (req, res) {
+  });
+
+  usersRouter.post('/login', function (req, res) {
+    const result =
+    [{
+      'id': 4,
+      'firstName': 'Tom',
+      'lastName': 'Woods',
+      'title': 'Software Engineer',
+      'email': 'tom.woods@gmail.com',
+      'dateCreated': 'December 20, 2021',
+    }];
+    res.send(result);
   });
 
   app.use('/api/users', usersRouter);

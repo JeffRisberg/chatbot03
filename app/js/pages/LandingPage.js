@@ -76,9 +76,9 @@ function LandingPage(props) {
           <div class="col-lg-4">
             <h2 style={{paddingLeft: '80px'}}>Prioritize Your Time</h2>
             <svg width="444" height="49" viewBox="0 0 444 49" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 className="absolute left-[173px] top-[310px]" preserveAspectRatio="none">
+              className="absolute left-[173px] top-[310px]" preserveAspectRatio="none">
               <path d="M4 45C67.3799 14.0604 243.312 -29.255 440 45" stroke="#2D7FE2" stroke-width="8"
-                    stroke-linecap="round"></path>
+                stroke-linecap="round"></path>
             </svg>
             <br/>
             <br/>
